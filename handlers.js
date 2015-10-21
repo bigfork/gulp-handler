@@ -17,7 +17,7 @@ ForkHandle = function(pkg) {
 				message: message,
 				onLast: opts.onLast ? opts.onLast : true,
 				logLevel: 0,
-				icon: path.resolve(__dirname, '../', 'assets', 'fork.png')
+				icon: path.resolve(__dirname, 'assets', 'fork.png')
 			};
 		},
 		show: function(message, success, opts) {
