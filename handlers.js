@@ -35,7 +35,7 @@ ForkHandle = function() {
 				error,
 				files = [];
 
-			file.scsslint.results.forEach(function(result) {
+			file.scsslint.issues.forEach(function(result) {
 				var base = path.basename(file.path);
 
 				files.indexOf(base) < 0 && files.push(base);
@@ -46,12 +46,14 @@ ForkHandle = function() {
 				);
 			});
 
-			if(files) {
+			if(files.length) {
 				gutil.beep();
-				error = new gutil.PluginError('scss-lint', 'SCSS lint failed for ' + files.join(', '));
+				error = new gutil.PluginError('gulp-scss-lint', {
+					message: 'SCSS lint failed for ' + files.join(', '),
+					showStack: false
+				});
 
 				notify.error(error);
-
 				return error;
 			}
 		}
