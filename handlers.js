@@ -1,6 +1,5 @@
-ForkHandle = function(pkg) {
+ForkHandle = function() {
 	var path = require('path'),
-
 		gutil = require('gulp-util'),
 		c = gutil.colors,
 		notification = require('gulp-notify'),
@@ -13,7 +12,6 @@ ForkHandle = function(pkg) {
 			notification.logLevel(0);
 			return {
 				title: 'Task ' + (success !== false ? 'complete' : 'failed'),
-				subtitle: pkg.description,
 				message: message,
 				onLast: opts.onLast ? opts.onLast : true,
 				logLevel: 0,
@@ -181,4 +179,4 @@ ForkHandle = function(pkg) {
 	};
 };
 
-module.exports = ForkHandle;
+module.exports = ForkHandle();
