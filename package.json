@@ -1,6 +1,6 @@
 {
 	"name": "gulp-bigfork-handler",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Custom handlers for logging, and other extras",
 	"main": "handlers.js",
 	"repository": "bigfork/gulp-handler",
